@@ -24,10 +24,9 @@ if st.button("🔍 Analyze Market Now"):
 
     st.subheader("📊 Live Market Data")
     col1, col2, col3 = st.columns(3)
-    col1.metric("Nifty 50", f"₹{data['current_price']}", f"{data['percentage_change']:.2f}%")
-    col2.metric("VIX", data['vix_level'])
+    col1.metric("Nifty 50", f"₹{data['current_price']}", str(data['percentage_change']))
+    col2.metric("VIX", str(data['vix_level']))
     col3.metric("52W High", f"₹{data['fiftytwo_week_high']}")
-
     with st.spinner("Searching latest news..."):
         news_result = search.invoke("Nifty 50 latest news today")
         news_text = " ".join([r["content"] for r in news_result["results"]])
