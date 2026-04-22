@@ -1,4 +1,4 @@
-from nsepython import nse_eq, nifty_quote
+from nsepython import nse_eq
 import requests
 
 def get_market_data():
